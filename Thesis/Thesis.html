@@ -97,14 +97,316 @@
     </section>
     <div class="container">
         <div class="row">
+            <div class="col-md-6">
+                <h2 style="text-align: center;">Thesis&nbsp;<span style="color: rgb(248,113,69);">Writing</span></h2><br><br><img src="assets/img/Features-of-the-Service.png" style="width: 268px;text-align: center;">
+            </div>
+            <div class="col-md-6"><style>
+.main-form {
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="datetime-local"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+.value-button {
+  display: inline-block;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  border: 0.5px solid lightgrey;
+}
+.value-button:hover {
+  cursor: pointer;
+}
+
+.main-form #decrease {
+  margin-right: -4px;
+  background-color: #eee;
+  color: black;
+  height: 40px;
+  width: 40px;
+
+  border-radius: 8px 0 0 8px;
+}
+
+.main-form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+  color: black;
+  width: 40px;
+  height: 40px;
+
+  background-color: #eee;
+}
+
+.main-form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  background-color: lightcyan;
+  border: none;
+  margin: 20px 0px;
+  width: 40px;
+
+  height: 40px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* File Input */
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+.file-input {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.file-input label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b6b6b6;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+  margin: 0px;
+}
+
+.file-name {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#submit {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #1895de;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0px;
+}
+@media (max-width: 768px) {
+  .file-input label {
+    font-size: 0.8rem;
+  }
+  .file-name {
+    font-size: 0.5rem;
+    margin-bottom: 0;
+  }
+  .main-form {
+    padding: 1.5rem;
+  }
+  .main-form h3 {
+    font-size: 1rem;
+  }
+  .main-form p:first-child {
+    font-size: 0.8rem;
+  }
+}
+</style>
+<form method="POST" class="main-form">
+            <h3 style="margin-bottom: 0">AssignmentHelplite</h3>
+            <small style="margin-top: 0">
+              Fill in the details and get a quick assistance on your assignment.
+            </small>
+            <label for="emailid">Enter your email id</label>
+            <input
+              type="email"
+              id="emailid"
+              name="email"
+              placeholder="Enter Email"
+            />
+
+            <label for="subjectcode">Your Subject / Course Code</label>
+            <input
+              type="text"
+              id="subjectcode"
+              name="subjectcode"
+              placeholder="Eg. UNCC100 Self & Community"
+            />
+            <label for="deadline">Deadline</label>
+            <input type="datetime-local" id="deadline" name="deadline" />
+            <label for>No. of Pages/ Words</label>
+            <br />
+            <div
+              class="value-button"
+              id="decrease"
+              style="margin-left: 0px"
+              onclick="decreaseValue()"
+              value="Decrease Value"
+            >
+              -
+            </div>
+            <input type="number" id="number" value="1" />
+
+            <div
+              class="value-button"
+              id="increase"
+              onclick="increaseValue()"
+              value="Increase Value"
+            >
+              +
+            </div>
+            <small id="words" style="margin-top: 0px">250 words</small>
+
+            <br />
+            <label for="message">Enter Assignment Description</label>
+            <textarea id="message" rows="3"></textarea>
+
+            <div class="actions">
+              <div class="file-input">
+                <div>
+                  <input type="file" id="file" class="file" />
+                  <label for="file"> Attach file </label>
+                </div>
+                <small class="file-name"></small>
+              </div>
+
+              <input type="button" value="Free Assistance" id="submit" />
+            </div>
+          </form>
+<script>
+    const words = document.querySelector("#words");
+const email = document.querySelector("#emailid");
+const subjectCode = document.querySelector("#subjectcode");
+const message = document.querySelector("#message");
+const submit = document.querySelector("#submit");
+
+submit.addEventListener("click", () => {
+  console.log("Sending data...");
+  sendData();
+});
+
+function increaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value++;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value < 1 ? (value = 1) : "";
+  value--;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+const file = document.querySelector("#file");
+file.addEventListener("change", (e) => {
+  // Get the selected file
+  const [file] = e.target.files;
+  // Get the file name and size
+  const { name: fileName, size } = file;
+  // Convert size in bytes to kilo bytes
+  const fileSize = (size / 1000).toFixed(2);
+  // Set the text content
+  const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+  document.querySelector(".file-name").textContent = fileNameAndSize;
+});
+
+function sendData() {
+  let formData = {
+    email: email.value,
+    subjectCode: subjectCode.value,
+    message: message.value,
+  };
+
+  let xhr = new XMLHttpRequest();
+  // xhr.open("POST", "https://asmt-server.herokuapp.com/mail");
+  xhr.open("POST", "http://localhost:5000/mail");
+
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.onload = function () {
+    console.log(xhr.responseText);
+    if (xhr.responseText == "success") {
+      alert("Email Sent Successfully");
+      email.value = "";
+      subjectCode.value = "";
+      message.value = "";
+    } else {
+      alert("Something Went wrong");
+    }
+  };
+  xhr.send(JSON.stringify(formData));
+}
+</script>
+
+</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
             <div class="col">
                 <h2 style="text-align: center;font-size: 49px;">Thesis&nbsp;<span style="color: rgb(248,113,69);">Writing</span></h2>
             </div>
         </div>
     </div><br><br>
     <section style="background: rgba(222,222,222,0.32);">
-        <div class="container"><small style="font-size: 21.8px;">At MyAssignmentWriters Ph.D. consultants in all fields partner with graduate students to assist them with their projects. Regardless of the number of sections or chapters that consultant and student work together on, this collaboration extends throughout the entire process. You can get help with an assignment of any level and complexity. Thesis projects are not easy, and that’s why we assign them to our finest Ph.D. writers. Graduate students feel overwhelmed. That’s their biggest reason for hiring thesis writing services. If you decided to do that, you need an agency that follows instructions, has a flawless reputation, and always delivers impressive results. We’ve been helping students to meet their goals for decades. Those who hire a writer from our team always come back for their next orders.<br><br><br><br>Buying thesis papers has become a common practice. More and more students are purchasing writing services; why shouldn’t you get an extra edge? Don’t let your thesis paper assignment lag behind.&nbsp;<br><br><br>Want somebody to write a Thesis for a fair price?<br><br>Online services are hard to find but it’s harder to find written assistance for complex tasks such as a thesis paper. After all, when you’re ready to get thesis writing help, your choice of an agency will make a big difference. There are a lot of fake services that will charge you a ton and write subpar texts. Please don’t fall into a similar predicament; let us write for you!<br><br><br><br>Our professionally trained essay writers are experts in different subjects. Our writers can handle any task within tight deadlines. They’re highly educated individuals ready to go the extra mile. MyAssignmentWriters has reasonable prices. We understand that most students struggle financially. We provide supreme quality to other websites. Check out our discounts for thesis paper services. First-timers and loyal clients get lower prices! And furthermore:<br><br>We protect your privacy!&nbsp;<br><br>You can contact us at any time to get the information you need. We offer free revisions to all customers who request them. Please, read the terms to get informed about the procedure of requesting free amendments.<br></small></div>
-    </section><br><br>
+        <div class="container"><br>
+            <h4>We offer you the best proposal help for your better scholarly profession.<br></h4><small style="font-size: 21.8px;"><br>Welcome to my task specialists for proposal help. A proposal is one of the hardest scholastic papers that understudies need to compose for their doctorate certificate. It requires some investment to compose as understudies need to direct thorough exploration on the subject and study a ton of Research Papers distributed previously. Our Experts need to say something regarding the accompanying three things:<br><br>For postulation help first, we will give a few hints about the most common way of composing that incorporates where you should zero in on which time of the proposition and a few things you need to consider when really composing the theory.<br><br>The subsequent thing is about correspondence with your managers. They are human and they are frequently extremely occupied so this is essential to remember. We'll give you a few hints on the best way to discuss adequately with your administrator.<br><br>Third, we think it is a vital component to stop at whatever point they are not into the right attitude. You need legitimate arranging and you ought to consistently adhere to that. Numerous understudies neglect to complete their postulation on schedule and this causes a ton of issues. It doesn't just squeezes you yet in addition sets you back a ton if terms of money too.<br><br><br></small>
+            <h4>How to write the best Thesis?<br></h4><small style="font-size: 19.8px;"><br>We realize that composing a theory is very intense and we likewise get that. We have a bit of our own insight of what could turn out badly in the theory composing and how to stay away from the normal traps with our postulation help. So toward the start of the theory, you should zero in on discovering data, however numerous understudies center unreasonably around discovering reference papers and beginning to find out about unclear data. Notwithstanding, this isn't in every case exceptionally helpful frequently it's smarter to zero in on three or four key references. You ought to likewise concur with your manager on what those three or four key references are or request that the director give them. Then, at that point you can check the reference rundown of these critical papers and assemble a reference data set likely in theory help.<br><br>In our postulation help, we generally make you mindful of a couple of things, for example, toward the start not to peruse excessively. You ought to have some outline of the field and you should comprehend the subject unmistakably. Then, at that point you should search for studies on your subject barely enough to figure some vital theories and some key commitments that you need to make yet don't begin perusing 20 to 30 articles on your theme since that will most likely take you half a month. You'll be confined for the time eventually. So you ought to really begin your examination a lot later. Whenever you are finished with the exploration and study, you should begin composing the paper. This is the best construction that you can follow while composing your proposal.<br><br>1. Conceptual – this is a little outline of your theory which shouldn't cross 300 words. Presentation – this is<br>the place where you would acquaint the theme with your per users. Writing audit – in this segment you would talk about the flow study done on the theme and where you have directed your exploration.<br><br>2. Procedure – This is the part where you talk about your methods of removing the information and how you are intending to accomplish your outcome.<br><br>3. Discoveries – this is the part where you need to introduce your discoveries and results to the perusers.<br>Conversation – you will examine everything exhaustively in this part. You need to give proof to your discoveries and let the per users comprehend your methodology.<br><br>4. End – This is the outline of your proposal where you will again give your discoveries suitable proof.<br><br>5. Book index – this is the rundown of references any place you have led your exploration. <br><br>6. Presently you can comprehend why composing a proposal is so extreme and significant. This is the reason we began our proposition help administrations.<br><br><br></small>
+            <h4>Get task help at whatever point you need it.<br></h4><small style="font-size: 19.8px;"><br>My Assignment Experts has been an innovator in the task help industry for quite a while presently. We have assisted huge number of understudies with their Assignment Help inquiries and every one of them had the option to score amazing grades. Here are the reasons why you ought to choose our task help administrations.<br>&nbsp;<br><br>1. We have a tremendous group of specialists who are exceptionally taught and experienced in scholarly<br>composition. <br><br>2. We offer 24X7 client assistance to understudies for their all task help needs. <br><br>3. We offer superior grade and literary theft free substance to every one of the understudies. <br><br>4. We have a protected installment entryway from PayPal. <br><br>5. We likewise offer an unconditional promise and free corrections too. <br><br>6. Our valuing is the most reasonable in the business.<br><br>Guides at Assignmenthelplite Experts intend to give superior grade, altered, and appropriately coordinated<br>answers with models, information, and speculations. Assignmenthelplite Experts give Thesis Assignment Help in Australia, USA, UK INDIA, and different pieces of the world; we are great and real. We guarantee critical task answers for each Master Degree understudies. Educators at Assignmenthelplite Experts are devoted specialists and rigorously cling to our time strategy. We realize late accommodation will hamper your grades generally. Our certified, gifted, teachers, and authors will supply blunder free, and amazing Thesis tasks with ensured quality at a reasonable cost.<br><br>Along these lines, as far as we might be concerned, late accommodation is consistently a major NO. We generally present our tasks before cutoff times. Reach us! Try not to delay. Assignmenthelplite Experts guarantees Thesis task help. Visit our site, www.assignmenthelplite.com, and reveal to us your Thesis task prerequisites.<br>&nbsp;<br><br></small>
+            <h4>Famous inquiries posed by understudies:<br></h4><small style="font-size: 19.8px;"><br>1.&nbsp;Will My Assignment Experts give Thesis task Help? <br><br>Indeed, My Assignment Experts give Thesis task Help. We guarantee 100 % copyright infringement free, altered, and unique well-informed tasks. We never risk the quality, and uprightness of our association – we work to deliver excellent substance with commitment and obligation. We give free Turn it in report during the hour of accommodation and composed expression of on-time accommodation. Scholars at Assignmenthelplite Experts are altogether prepared and prepared to give moment task composing help at a modest and reasonable cost.<br><br>2. Will My Assignment Experts enlist proficient teachers?<br><br>Assignmenthelplite Experts recruit the best master. Educators, information base coaches, and researchers who accompany complete subject information and pragmatic experience to give Thesis Assignment Help. They are experts and have years least 8 involvement with their field of study. Consequently they are great for aiding you.<br><br></small>
+        </div>
+    </section><br>
     <div data-aos="zoom-in" class="footer-dark degra-azul">
         <footer>
             <div class="container">
