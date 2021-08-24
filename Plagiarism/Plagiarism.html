@@ -97,14 +97,362 @@
     </section>
     <div class="container">
         <div class="row">
+            <div class="col-md-6" style="text-align: center;"><br><br><br><br>
+                <h4 style="font-size: 32px;">Plagiarism&nbsp;<span style="color: rgb(248,113,69);">Checker</span></h4><br><br><img src="assets/img/plagrism_checker_image-removebg-preview.png" style="font-size: 0px;width: 306px;">
+            </div>
+            <div class="col-md-6"><style>
+.main-form {
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="datetime-local"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+.value-button {
+  display: inline-block;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  border: 0.5px solid lightgrey;
+}
+.value-button:hover {
+  cursor: pointer;
+}
+
+.main-form #decrease {
+  margin-right: -4px;
+  background-color: #eee;
+  color: black;
+  height: 40px;
+  width: 40px;
+
+  border-radius: 8px 0 0 8px;
+}
+
+.main-form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+  color: black;
+  width: 40px;
+  height: 40px;
+
+  background-color: #eee;
+}
+
+.main-form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  background-color: lightcyan;
+  border: none;
+  margin: 20px 0px;
+  width: 40px;
+
+  height: 40px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* File Input */
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+.file-input {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.file-input label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b6b6b6;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+  margin: 0px;
+}
+
+.file-name {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#submit {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #1895de;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0px;
+}
+@media (max-width: 768px) {
+  .file-input label {
+    font-size: 0.8rem;
+  }
+  .file-name {
+    font-size: 0.5rem;
+    margin-bottom: 0;
+  }
+  .main-form {
+    padding: 1.5rem;
+  }
+  .main-form h3 {
+    font-size: 1rem;
+  }
+  .main-form p:first-child {
+    font-size: 0.8rem;
+  }
+}
+</style>
+<form method="POST" class="main-form">
+            <h3 style="margin-bottom: 0">AssignmentHelplite</h3>
+            <small style="margin-top: 0">
+              Fill in the details and get a quick assistance on your assignment.
+            </small>
+            <label for="emailid">Enter your email id</label>
+            <input
+              type="email"
+              id="emailid"
+              name="email"
+              placeholder="Enter Email"
+            />
+
+            <label for="subjectcode">Your Subject / Course Code</label>
+            <input
+              type="text"
+              id="subjectcode"
+              name="subjectcode"
+              placeholder="Eg. UNCC100 Self & Community"
+            />
+            <label for="deadline">Deadline</label>
+            <input type="datetime-local" id="deadline" name="deadline" />
+            <label for>No. of Pages/ Words</label>
+            <br />
+            <div
+              class="value-button"
+              id="decrease"
+              style="margin-left: 0px"
+              onclick="decreaseValue()"
+              value="Decrease Value"
+            >
+              -
+            </div>
+            <input type="number" id="number" value="1" />
+
+            <div
+              class="value-button"
+              id="increase"
+              onclick="increaseValue()"
+              value="Increase Value"
+            >
+              +
+            </div>
+            <small id="words" style="margin-top: 0px">250 words</small>
+
+            <br />
+            <label for="message">Enter Assignment Description</label>
+            <textarea id="message" rows="3"></textarea>
+
+            <div class="actions">
+              <div class="file-input">
+                <div>
+                  <input type="file" id="file" class="file" />
+                  <label for="file"> Attach file </label>
+                </div>
+                <p class="file-name"></p>
+              </div>
+
+              <input type="button" value="Free Assistance" id="submit" />
+            </div>
+          </form>
+<script>
+    const words = document.querySelector("#words");
+const email = document.querySelector("#emailid");
+const subjectCode = document.querySelector("#subjectcode");
+const message = document.querySelector("#message");
+const submit = document.querySelector("#submit");
+
+submit.addEventListener("click", () => {
+  console.log("Sending data...");
+  sendData();
+});
+
+function increaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value++;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value < 1 ? (value = 1) : "";
+  value--;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+const file = document.querySelector("#file");
+file.addEventListener("change", (e) => {
+  // Get the selected file
+  const [file] = e.target.files;
+  // Get the file name and size
+  const { name: fileName, size } = file;
+  // Convert size in bytes to kilo bytes
+  const fileSize = (size / 1000).toFixed(2);
+  // Set the text content
+  const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+  document.querySelector(".file-name").textContent = fileNameAndSize;
+});
+
+function sendData() {
+  let formData = {
+    email: email.value,
+    subjectCode: subjectCode.value,
+    message: message.value,
+  };
+
+  let xhr = new XMLHttpRequest();
+  // xhr.open("POST", "https://asmt-server.herokuapp.com/mail");
+  xhr.open("POST", "http://localhost:5000/mail");
+
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.onload = function () {
+    console.log(xhr.responseText);
+    if (xhr.responseText == "success") {
+      alert("Email Sent Successfully");
+      email.value = "";
+      subjectCode.value = "";
+      message.value = "";
+    } else {
+      alert("Something Went wrong");
+    }
+  };
+  xhr.send(JSON.stringify(formData));
+}
+</script>
+
+</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
             <div class="col">
                 <h2 style="text-align: center;font-size: 49px;">Plagiarism&nbsp;<span style="color: rgb(248,113,69);">Checker</span></h2>
             </div>
         </div>
-    </div><br><br>
-    <section style="background: rgba(222,222,222,0.32);">
-        <div class="container"><small style="font-size: 21.8px;">At MyAssignmentWriters Ph.D. consultants in all fields partner with graduate students to assist them with their projects. Regardless of the number of sections or chapters that consultant and student work together on, this collaboration extends throughout the entire process. You can get help with an assignment of any level and complexity. Thesis projects are not easy, and that’s why we assign them to our finest Ph.D. writers. Graduate students feel overwhelmed. That’s their biggest reason for hiring thesis writing services. If you decided to do that, you need an agency that follows instructions, has a flawless reputation, and always delivers impressive results. We’ve been helping students to meet their goals for decades. Those who hire a writer from our team always come back for their next orders.<br><br><br><br>Buying thesis papers has become a common practice. More and more students are purchasing writing services; why shouldn’t you get an extra edge? Don’t let your thesis paper assignment lag behind.&nbsp;<br><br><br>Want somebody to write a Thesis for a fair price?<br><br>Online services are hard to find but it’s harder to find written assistance for complex tasks such as a thesis paper. After all, when you’re ready to get thesis writing help, your choice of an agency will make a big difference. There are a lot of fake services that will charge you a ton and write subpar texts. Please don’t fall into a similar predicament; let us write for you!<br><br><br><br>Our professionally trained essay writers are experts in different subjects. Our writers can handle any task within tight deadlines. They’re highly educated individuals ready to go the extra mile. MyAssignmentWriters has reasonable prices. We understand that most students struggle financially. We provide supreme quality to other websites. Check out our discounts for thesis paper services. First-timers and loyal clients get lower prices! And furthermore:<br><br>We protect your privacy!&nbsp;<br><br>You can contact us at any time to get the information you need. We offer free revisions to all customers who request them. Please, read the terms to get informed about the procedure of requesting free amendments.<br></small></div>
-    </section><br><br>
+    </div>
+    <section style="background: rgba(222,222,222,0.32);"><br><br>
+        <div class="container">
+            <h4>Recognize the traces of plagiarism in a document instantly.<br></h4><br>
+            <h5 style="text-align: center;">How to use the online plagiarism checker?<br></h5><small style="font-size: 19.8px;"><br>The online literary theft checker apparatus is totally simple to utilize. It is planned so that anybody with fundamental PC information can utilize it according to their accommodation. Follow these means referenced beneath to really take a look at the inventiveness of your record.<br><br></small>
+        </div><br><br><br>
+        <div class="container" style="text-align: center;">
+            <div class="row">
+                <div class="col-md-3"><img src="assets/img/upload%201.png" style="width: 138px;">
+                    <h4>Upload</h4><small style="font-size: 15.8px;">Transfer the record straightforwardly utilizing the simplified procedure or duplicate glue the text.</small>
+                </div>
+                <div class="col-md-3"><img src="assets/img/scan_22-removebg-preview.png" style="width: 118px;">
+                    <h4>Scan</h4><small style="font-size: 15.8px;">Whenever you are finished transferring the text, the device begins examining the text for correlation.</small>
+                </div>
+                <div class="col-md-3"><img src="assets/img/campare%20image2.png">
+                    <h4>Compare</h4><small style="font-size: 15.8px;">The device looks at the text against the billions of site pages and distributions.</small>
+                </div>
+                <div class="col-md-3"><img src="assets/img/report-removebg-preview%20(2).png" style="width: 124px;">
+                    <h4>Report</h4><small style="font-size: 15.8px;">Finally, the tool provides you with the plagiarism report of the document with details.</small>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="text-align: center;"><br><br><button class="btn btn-primary btn-lg" type="button" style="background: rgb(248,113,69);">Check Plagiarism</button></div><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><strong>Counterfeiting Checker Tool:</strong><br></h3>
+                    <h5>Why is it important?<br></h5><small style="font-size: 19.8px;"><br>Copyright infringement has been difficult for understudies, educators and authors. Indeed, even 1% of counterfeiting can destroy your whole scholastic vocation. Utilizing our online counterfeiting indicator can assist you with presenting a 100% unique record to your teachers with no problem.<br><br>Our free online counterfeiting checker apparatus keeps your college's most elevated scholastic principles while examining your report. Evaluate our counterfeiting checker free of charge on the web and get the outcomes inside only seconds.<br></small>
+                </div>
+                <div class="col-md-6" style="text-align: center;"><br><br><br><img src="assets/img/kkk1-removebg-preview.png" style="width: 325px;"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="text-align: center;"><br><br><br><br><br><img src="assets/img/research-removebg-preview.png" style="width: 308px;"></div>
+                <div class="col-md-6"><br><br>
+                    <h5>Your archive will be viewed as counterfeited when you:<br></h5><small class="text-left" style="font-size: 19.8px;"><br>Reorder data from bibliographical sources or from the Internet without offering credit to the first creator.<br><br>Use cites, portions from books, manuals and so on in your task without refering to them.<br><br>Rework another person's work without joining your own contentions or cases.<br><br>Check counterfeiting on the web on our literary theft locator free of charge to ensure your record is liberated from any sort of copyright infringement. Copyright infringement can cause punishments, humiliation and even ejection from your instructive organization. It can make your scholarly life troublesome as well as influence your expert one.<br><br>Our copyright infringement checker programming genuinely looks at your report against a large number of information bases on the Internet, disconnected distributions and a wide slew of different sources. You can likewise download the free online literary theft checker report with rate and change the copied segments.<br></small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"><br><br>
+                    <h5>Is our online literary theft checker reliable?<br></h5><small class="text-left" style="font-size: 19.8px;"><br>Our copyright infringement checker has procured colossal ubiquity everywhere. Our apparatus checks for counterfeiting as well as features the linguistic mistakes in your report. We have designated a portion of the world's best web engineers to fabricate a customer driven, easy to use and hearty literary theft checker on the web.<br><br>You might discover other counterfeiting checker instruments on the Internet. In any case, isn't it better to utilize a counterfeiting checker that is trusted by a large number of understudies instead of utilizing an irregular apparatus?<br></small><br><br>
+                </div>
+                <div class="col-md-6" style="text-align: center;"><br><br><img src="assets/img/training.png" style="width: 361px;"></div>
+            </div>
+        </div>
+        <div class="container"><br></div>
+        <div class="container">
+            <h5>Would you be able to check ?<br></h5><br>
+            <h4>Counterfeiting online for free?<br></h4><small style="font-size: 19.8px;"><br>Different organizations might charge extravagant rates prior to allowing you to utilize their counterfeiting checker. We, actually, offer a free counterfeiting checker online for understudies from everywhere the world. We see how significant it is for you to present a 100% unique task in class. Consequently, we let you check copyright infringement free of charge just at Assignmenthelplite.com .<br><br>You can quit stressing over the spending when you utilize our counterfeiting checker. Simply transfer your document or reorder your texts on the counterfeiting checker apparatus. Hit on the alternative 'Check for Plagiarism.' The instrument will begin filtering your record and return the outcomes inside merely seconds.<br><br></small>
+            <h4>Other than being free, here are some different characteristics of our apparatus:<br></h4><br>
+            <h5>Other than being free, here are some various attributes of our mechanical assembly:<br></h5><small style="font-size: 19.8px;"><br>The apparatus returns 100% precise outcomes just inside only seconds. You can download the copyright infringement report in the wake of changing the counterfeited areas free of charge. The information base of sources is refreshed continually to convey you the best outcomes. You can filter quite a few words for<br>literary theft utilizing our copyright infringement checker programming. We have planned our copyright infringement checker device to oblige your scholarly requirements. Our group is additionally anticipating improving our administrations much more for you. Thus, go ahead and give input on our counterfeiting identifier assuming you need.<br><br></small>
+            <h4>Will the free plagiarism checker convey authentic results?<br></h4><small style="font-size: 19.8px;"><br>You can look at our customer tributes to perceive how reliable our literary theft instrument's outcomes are. In contrast to different organizations, we have tried the usefulness of our literary theft checker on numerous occasions prior to making it accessible for use. Our group has cross-genuinely look at the outcomes on the significant web crawlers and other pertinent course books. Our counterfeiting device naturally runs your substance against a huge number of assets accessible in our data set. You can download the counterfeiting report from our device as evidence for your unique work.<br><br></small>
+            <h4>Here is the way our online copyright infringement checker conveys bona fide results:<br></h4><small style="font-size: 19.8px;"><br>1. We update our data set of sources each day to ensure you get the most refreshed and solid outcomes for counterfeiting.<br><br>2. Our device recognizes both the degrees of remarkable and copied content in your record in rate.<br><br>3. Our counterfeiting checker examines 1.5+ billion website pages, 10+ million distributions and 5+ million<br>scholastics papers, articles, diaries, and so forth<br><br>4. The outcomes produced by our counterfeiting locator show the copied and remarkable spaces of your archive, sentence-by-sentence in a rundown design.<br><br>You can likewise see the outcomes that have been coordinated by different sources. In this way, the credibility of our online copyright infringement indicator lies in our outcomes and reports. Snap on the coordinated with results and contrast your message and the comparative ones that are distributed as of now.<br><br></small>
+            <h4>Destroy the odds of infringement – use our advanced copyright checker<br></h4><small style="font-size: 19.8px;"><br>Spotting copy content gets twice simpler. Our high level copy content checker is controlled by Artificial Intelligence and wealthy in data set. The most recent algorithmic improvement in our copyright checker will permit you to receive every one of the accompanying rewards and then some.<br><br>1.&nbsp;The keen application keeps others from encroaching your copyrights.<br><br>2.&nbsp;You can check and affirm whether the selection or the whole book/diary/task has been distributed somewhere else.<br><br>3. The high level plan and work of the application make it speedy, adaptable and actually consistent in each viewpoint.<br><br>4.&nbsp;You can play out a wide scope of copyright check across numerous substance types.<br><br>5.&nbsp;From books to diaries, and examination extracts to article papers; and so on, we have it.<br><br>6.&nbsp;Likewise, you can check copyright issues in scholastic papers, for example, contextual analyses, theses, coursework, research project and that's just the beginning.<br><br>We do recognize the way that trickery in any structure is a wrongdoing, and nobody ought to underwrite such chances under any conditions. It includes a ton of exertion and assurance to deliver unique substance. Along these lines, one ought to not really settled and zeroed in on shielding something similar. This is the place where our high level copyright checker becomes an integral factor. <br><br>Despite the fact that there are applications, for example, Dupli checker and counterfeiting checker to keep content deceptions under control, this specific application blossoms with its best in class highlights. You simply need to glue the substance, and snap on the "Produce Solution" button. Presto! You are a great idea to go! Copyright encroachment will no more be unpleasant affliction.<br><br></small>
+        </div>
+    </section>
     <div data-aos="zoom-in" class="footer-dark degra-azul">
         <footer>
             <div class="container">

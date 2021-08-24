@@ -97,14 +97,323 @@
     </section>
     <div class="container">
         <div class="row">
+            <div class="col-md-6"><br>
+                <h4 style="text-align: center;font-size: 38px;">Proof<span style="color: rgb(248,113,69);">reading</span></h4><br><br><img src="assets/img/Features-of-the-Service.png" style="width: 298px;">
+            </div>
+            <div class="col-md-6"><style>
+.main-form {
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="datetime-local"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+.value-button {
+  display: inline-block;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  border: 0.5px solid lightgrey;
+}
+.value-button:hover {
+  cursor: pointer;
+}
+
+.main-form #decrease {
+  margin-right: -4px;
+  background-color: #eee;
+  color: black;
+  height: 40px;
+  width: 40px;
+
+  border-radius: 8px 0 0 8px;
+}
+
+.main-form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+  color: black;
+  width: 40px;
+  height: 40px;
+
+  background-color: #eee;
+}
+
+.main-form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  background-color: lightcyan;
+  border: none;
+  margin: 20px 0px;
+  width: 40px;
+
+  height: 40px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* File Input */
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+.file-input {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.file-input label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b6b6b6;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+  margin: 0px;
+}
+
+.file-name {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#submit {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #1895de;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0px;
+}
+@media (max-width: 768px) {
+  .file-input label {
+    font-size: 0.8rem;
+  }
+  .file-name {
+    font-size: 0.5rem;
+    margin-bottom: 0;
+  }
+  .main-form {
+    padding: 1.5rem;
+  }
+  .main-form h3 {
+    font-size: 1rem;
+  }
+  .main-form p:first-child {
+    font-size: 0.8rem;
+  }
+}
+</style>
+<form method="POST" class="main-form">
+            <h3 style="margin-bottom: 0">AssignmentHelplite</h3>
+            <small style="margin-top: 0">
+              Fill in the details and get a quick assistance on your assignment.
+            </small>
+            <label for="emailid">Enter your email id</label>
+            <input
+              type="email"
+              id="emailid"
+              name="email"
+              placeholder="Enter Email"
+            />
+
+            <label for="subjectcode">Your Subject / Course Code</label>
+            <input
+              type="text"
+              id="subjectcode"
+              name="subjectcode"
+              placeholder="Eg. UNCC100 Self & Community"
+            />
+            <label for="deadline">Deadline</label>
+            <input type="datetime-local" id="deadline" name="deadline" />
+            <label for>No. of Pages/ Words</label>
+            <br />
+            <div
+              class="value-button"
+              id="decrease"
+              style="margin-left: 0px"
+              onclick="decreaseValue()"
+              value="Decrease Value"
+            >
+              -
+            </div>
+            <input type="number" id="number" value="1" />
+
+            <div
+              class="value-button"
+              id="increase"
+              onclick="increaseValue()"
+              value="Increase Value"
+            >
+              +
+            </div>
+            <small id="words" style="margin-top: 0px">250 words</small>
+
+            <br />
+            <label for="message">Enter Assignment Description</label>
+            <textarea id="message" rows="3"></textarea>
+
+            <div class="actions">
+              <div class="file-input">
+                <div>
+                  <input type="file" id="file" class="file" />
+                  <label for="file"> Attach file </label>
+                </div>
+                <small class="file-name"></small>
+              </div>
+
+              <input type="button" value="Free Assistance" id="submit" />
+            </div>
+          </form>
+<script>
+    const words = document.querySelector("#words");
+const email = document.querySelector("#emailid");
+const subjectCode = document.querySelector("#subjectcode");
+const message = document.querySelector("#message");
+const submit = document.querySelector("#submit");
+
+submit.addEventListener("click", () => {
+  console.log("Sending data...");
+  sendData();
+});
+
+function increaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value++;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value < 1 ? (value = 1) : "";
+  value--;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+const file = document.querySelector("#file");
+file.addEventListener("change", (e) => {
+  // Get the selected file
+  const [file] = e.target.files;
+  // Get the file name and size
+  const { name: fileName, size } = file;
+  // Convert size in bytes to kilo bytes
+  const fileSize = (size / 1000).toFixed(2);
+  // Set the text content
+  const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+  document.querySelector(".file-name").textContent = fileNameAndSize;
+});
+
+function sendData() {
+  let formData = {
+    email: email.value,
+    subjectCode: subjectCode.value,
+    message: message.value,
+  };
+
+  let xhr = new XMLHttpRequest();
+  // xhr.open("POST", "https://asmt-server.herokuapp.com/mail");
+  xhr.open("POST", "http://localhost:5000/mail");
+
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.onload = function () {
+    console.log(xhr.responseText);
+    if (xhr.responseText == "success") {
+      alert("Email Sent Successfully");
+      email.value = "";
+      subjectCode.value = "";
+      message.value = "";
+    } else {
+      alert("Something Went wrong");
+    }
+  };
+  xhr.send(JSON.stringify(formData));
+}
+</script>
+
+</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
             <div class="col">
                 <h2 style="text-align: center;font-size: 49px;">Proof<span style="color: rgb(248,113,69);">reading</span></h2>
             </div>
         </div>
     </div><br><br>
     <section style="background: rgba(222,222,222,0.32);">
-        <div class="container"><small style="font-size: 21.8px;">At MyAssignmentWriters Ph.D. consultants in all fields partner with graduate students to assist them with their projects. Regardless of the number of sections or chapters that consultant and student work together on, this collaboration extends throughout the entire process. You can get help with an assignment of any level and complexity. Thesis projects are not easy, and that’s why we assign them to our finest Ph.D. writers. Graduate students feel overwhelmed. That’s their biggest reason for hiring thesis writing services. If you decided to do that, you need an agency that follows instructions, has a flawless reputation, and always delivers impressive results. We’ve been helping students to meet their goals for decades. Those who hire a writer from our team always come back for their next orders.<br><br><br><br>Buying thesis papers has become a common practice. More and more students are purchasing writing services; why shouldn’t you get an extra edge? Don’t let your thesis paper assignment lag behind.&nbsp;<br><br><br>Want somebody to write a Thesis for a fair price?<br><br>Online services are hard to find but it’s harder to find written assistance for complex tasks such as a thesis paper. After all, when you’re ready to get thesis writing help, your choice of an agency will make a big difference. There are a lot of fake services that will charge you a ton and write subpar texts. Please don’t fall into a similar predicament; let us write for you!<br><br><br><br>Our professionally trained essay writers are experts in different subjects. Our writers can handle any task within tight deadlines. They’re highly educated individuals ready to go the extra mile. MyAssignmentWriters has reasonable prices. We understand that most students struggle financially. We provide supreme quality to other websites. Check out our discounts for thesis paper services. First-timers and loyal clients get lower prices! And furthermore:<br><br>We protect your privacy!&nbsp;<br><br>You can contact us at any time to get the information you need. We offer free revisions to all customers who request them. Please, read the terms to get informed about the procedure of requesting free amendments.<br></small></div>
-    </section><br><br>
+        <div class="container"><br>
+            <h4><strong>Why You Need A Proof reader?</strong><br></h4><br><small style="font-size: 21.8px;">In spite of concentrating hard and contributing hours on tasks did you neglect to get an A+ grade in your semester? At any point pondered where did you turn out badly Assignmenthelplite.com knows the appropriate response. Understudies are exceptionally cognizant with their articulation however while they are composing a task they make a ton of normal linguistic blunders, spelling botches, inaccurate utilization of words; compose clean. Editing is a capacity that intentionally and cautiously looks at all the composing blunders in a content to give an ideal piece of composing. It is the main last advance prior to distributing the paper. It searches for minor slip-ups like a spelling mistake, accentuation blunder, printer's mistake, arranging, and much more in explicit.<br><br></small>
+            <h4><strong>How does a proofreader&nbsp;respond?</strong><br></h4><small style="font-size: 19.8px;"><br>An editor considers the whole content, record, book, and piece of composing and alters it as needs be. It guarantees the quality prior to distributing and making it accessible to general society. Recruit an editor or download an internet editing application and audit the task. Online applications are not as productive as an editor personally, so it is prudent to recruit one. A decent editor will assist the understudy with submitting astounding, great quality, and perfect composition. Here, Myassignmentexperts.com is expressing 6 reasons why you need an editor:<br><br>1.The perfect word at the perfect spot Understudies frequently commit a typical error; the word is exceptionally incredible and wrong utilization can change the importance of the appropriate response. For instance: race/raise, break/brake, Copywrite/copyright, desert/treat and parcel more. Each word has an alternate importance however they sound comparable. Henceforth, you should know the importance of each word prior to applying them.<br><br>2. Right spelling are you sure you are writing the right spelling? Even spelling can change the word and later the whole meaning of the sentence. Don’t rely on a spellchecker; you are committing the biggest blunder. It is better to use a dictionary and know the right spelling and its meaning.<br><br>3. Accentuation a&nbsp;comma, a semicolon, a full stop, and part more accentuations assume a significant part<br>in deciding the importance of a sentence. Comma at some unacceptable spot or nonattendance of comma can change the entire significance.<br><br>4. Grammar Tense, relational words, subject-action word use are a center element of outlining an English sentence. Abuse of verb modifiers, or wrong word, run-on sentences can make your task standard fall.<br><br>5. Clarity you can't compose everything in your brain. Task ought to contain legitimate information, outlines, charts, flowcharts, speculations, and much more. Giving incorrectly data and individual thoughts or musings can bring A-grade. They additionally take a look at reference, referring to, and capitalization.<br><br>6. Style every task has various necessities like word tally, text style, and much more. Follow each point exhorted by school educators. Never utilize short structures and circuitous sentences. The editor will really take a look at the pertinence of the task.<br><br>7. Handle this load of directions given by myassignemntexpert.com prior to presenting your tasks. Editing is a significant phase of altering, so never disregard it; enlist an expert editor.<br><br></small>
+            <h4>What is the difference between Proofreading and Editing?<br></h4><br>
+            <h5>Editing and altering: Are they the equivalent?<br></h5><br><small style="font-size: 19.8px;">No, editing and altering are two distinct strides of concluding composition, a record or a book. Each individual who composes and distributes their composing should employ a regular working editing and publication group to really look at the last piece. They will genuinely take a look at language, spelling, copyright infringement, and significantly more exhaustively.<br><br>Editor inspects the composition from the highest level, it actually looks at spelling, sentence structure, accentuation, numbers. While, the publication group, then again, actually take a look at each sentence exhaustively like development of sentences, subject-action word arrangement, use of words, which means, and content significance. Altering will redesign the understandability, tidiness, straightforwardness, and tone of the text. An editorial manager will check and light up your task for a smooth depiction.<br><br>Assignmenthelplite.com offers editing and publication administration to understudies on exposition, postulation, task composing, article composing, business composing, and scholarly task composing. We have long stretches of involvement with this composing business and have conveyed 1,668,637 tasks to 300,000 understudies everywhere. We have procured positive audits from our clients and they are fulfilled and have evaluated us 4.5 out of 5 stars. Thus, don't deferral, and call us for your help.<br><br>Assignmenthelplite.com is the best driving and prominent task composing specialist co-op on the planet. All task editing help is given by us from math, science, expressions to the board, bookkeeping, and engineering everything is helped by our association. Paper, proposal composing, article, task addressing, and schoolwork are completely settled by us.<br><br></small>
+            <h4>What does the proofreading symbol mean?<br></h4><small style="font-size: 19.8px;"><br>Editing images are utilized for emending or correcting pages while altering. The editor utilizes certain images or checks in the edges and in partner lines of the composition to feature some unacceptable parts. An editor actually takes a look at language, spelling, accentuation, and capitalization in a composing piece.<br><br></small>
+            <h5>Strategy to get editing on the web help.<br></h5><small style="font-size: 19.8px;"><br>We ensure and regard your security. Along these lines, you can talk straightforwardly to our client care leader and follow simple strides to get editing and altering benefits:<br><br>&nbsp;1. Move your task or content to us: Go to our site and transfer your text record of DOC, DOCX, PDF, PPT, PPTX, RTF, TEX, TXT, XLS, XLSX design.<br><br>2. Editing button: After transferring click on the editing catch and it will divert you to the outcome area.<br><br>3. Change likewise: The machine apparatus will show the blunders and missteps like spelling, language structure, accentuation, and significantly more. You must examination and analyze each error and correct it.<br><br></small>
+            <h4>How at Assignementhelplite.com expert work?<br></h4><small style="font-size: 19.8px;"><br>1. Each sentence: Proofreader will really look at language, punctuation, linguistic structure, the word. Specialists will consider and analyze each line and sentence exhaustively.<br><br>2. Arrangement: Proofreaders will likewise analyze the pertinence of the theme with the task. They will reevaluate information, values, speculations with the goal that they are legitimate and right.<br><br>3. Correct vocabulary: Wrong words will not only change the whole meaning of the sentence but will give a bad impression. Use proper word in right place.<br><br></small>
+            <h4>Appreciate benefits from Assignmenthelplite.com<br></h4><small style="font-size: 19.8px;"><br>Understudies can appreciate or support through our site. Peruse all checked audits given by them. Understudies who have effectively reached us once know us and are fulfilled clients. 75% of our clients are regulars who have effectively benefited us. We can convey your task inside an hour as well. Our administration is forward-thinking and we never trust in duplicate glue strategy. Make installment through PayPal the most secure site for installment and partake in our administration. After installment, you can pick one of the experts from a pool of gifted scholars from Myassignmentexperts.com. <br><br>Myassignemntexpert.com has remarkable and great provisions which understudies can benefit once they contact and pay for our administration. Pay once and appreciate for lifetime. Here, expert has a decent hang regarding each matter and are capable editors can assist understudies with splendid composition. <br><br>100% new and remarkable substance We get a call from you and begin working without any preparation; we don't give you another person allocated work. We give 100%, literary theft free, unique setting, and explored content. We utilize the Write Check site planned by Turn it in as a literary theft scanner. Assignmenthelplite.com worker the best specialists, trained professional, topic, composing specialists to give the best task to understudies.<br><br></small>
+            <h4>Arranging and referring to<br></h4><small style="font-size: 19.8px;"><br>Our expert won't ever deal with the norm or nature of task. Consequently every individual who comes to us will get a decent assistance. Our association follows organized strategies to finish the task inside short time frame period. After our essayist complete their part it goes for alter work so that any spelling slip-ups or copyright infringement are recognized and can be corrected. They are very much aware of Harvard referring to, Vancouver referring to, APA referring to, Chicago referring to, and MLA referring to.<br><br></small>
+            <h4>Gifted specialists<br></h4><small style="font-size: 19.8px;"><br>Our group is qualified and +1000 Ph.D. holders with at least 8 years of involvement. Our experts work on updated innovation and apparatuses which give you exemplary substance. Our prepared expert who is proficient and can manage each youngster, in an exceptional style and procedures custom fitted just to accommodate their advantages. We furnish you with a new and organized tailor – made article. This enemy of copyright infringement task is the sign of our work. Our workers do right by us and number1 specialist co-op.<br><br></small>
+            <h4>Pocket well disposed<br></h4><small style="font-size: 19.8px;"><br>We charge a sensible sum contrasted with others sites. We are effectively reasonable by all individuals, understudies, educators, individuals who are working, or the ones who are searching for occupations. Get numerous coupon codes and limits accessible on our sites. In the event that you request on mass, you can appreciate level 40% off code. <br><br>Regardless of in which class you are in, don't stop for a second to take editing and article help from my task master to sparkle in the entirety of your task in your scholastic vocation. Your task is changed a few times with the goal that you got blunder free substance. We expect to finish your task inside the period so you can get A+ in your subject.<br></small>
+        </div>
+    </section><br>
     <div data-aos="zoom-in" class="footer-dark degra-azul">
         <footer>
             <div class="container">
