@@ -97,14 +97,307 @@
     </section>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <h2 style="text-align: center;font-size: 49px;">Refere<span style="color: rgb(248,113,69);">ncing</span></h2>
+            <div class="col-md-6" style="text-align: center;">
+                <h2 style="text-align: center;font-size: 49px;">Refere<span style="color: rgb(248,113,69);">ncing</span></h2><br><br><br><br><br><br><br><img src="assets/img/WhatsApp%20Image%202021-08-27%20at%2010.34.33%20AM.jpeg" style="width: 328px;">
             </div>
+            <div class="col-md-6"><style>
+.main-form {
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="datetime-local"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+.value-button {
+  display: inline-block;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  border: 0.5px solid lightgrey;
+}
+.value-button:hover {
+  cursor: pointer;
+}
+
+.main-form #decrease {
+  margin-right: -4px;
+  background-color: #eee;
+  color: black;
+  height: 40px;
+  width: 40px;
+
+  border-radius: 8px 0 0 8px;
+}
+
+.main-form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+  color: black;
+  width: 40px;
+  height: 40px;
+
+  background-color: #eee;
+}
+
+.main-form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  background-color: lightcyan;
+  border: none;
+  margin: 20px 0px;
+  width: 40px;
+
+  height: 40px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* File Input */
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+.file-input {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.file-input label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b6b6b6;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+  margin: 0px;
+}
+
+.file-name {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#submit {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #1895de;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0px;
+}
+@media (max-width: 768px) {
+  .file-input label {
+    font-size: 0.8rem;
+  }
+  .file-name {
+    font-size: 0.5rem;
+    margin-bottom: 0;
+  }
+  .main-form {
+    padding: 1.5rem;
+  }
+  .main-form h3 {
+    font-size: 1rem;
+  }
+  .main-form p:first-child {
+    font-size: 0.8rem;
+  }
+}
+</style>
+<form method="POST" class="main-form">
+            <h3 style="margin-bottom: 0">AssignmentHelplite</h3>
+            <small style="margin-top: 0">
+              Fill in the details and get a quick assistance on your assignment.
+            </small>
+            <label for="emailid">Enter your email id</label>
+            <input
+              type="email"
+              id="emailid"
+              name="email"
+              placeholder="Enter Email"
+            />
+
+            <label for="subjectcode">Your Subject / Course Code</label>
+            <input
+              type="text"
+              id="subjectcode"
+              name="subjectcode"
+              placeholder="Eg. UNCC100 Self & Community"
+            />
+            <label for="deadline">Deadline</label>
+            <input type="datetime-local" id="deadline" name="deadline" />
+            <label for>No. of Pages/ Words</label>
+            <br />
+            <div
+              class="value-button"
+              id="decrease"
+              style="margin-left: 0px"
+              onclick="decreaseValue()"
+              value="Decrease Value"
+            >
+              -
+            </div>
+            <input type="number" id="number" value="1" />
+
+            <div
+              class="value-button"
+              id="increase"
+              onclick="increaseValue()"
+              value="Increase Value"
+            >
+              +
+            </div>
+            <small id="words" style="margin-top: 0px">250 words</small>
+
+            <br />
+            <label for="message">Enter Assignment Description</label>
+            <textarea id="message" rows="3"></textarea>
+
+            <div class="actions">
+              <div class="file-input">
+                <div>
+                  <input type="file" id="file" class="file" />
+                  <label for="file"> Attach file </label>
+                </div>
+                <p class="file-name"></p>
+              </div>
+
+              <input type="button" value="Free Assistance" id="submit" />
+            </div>
+          </form>
+<script>
+    const words = document.querySelector("#words");
+const email = document.querySelector("#emailid");
+const subjectCode = document.querySelector("#subjectcode");
+const message = document.querySelector("#message");
+const submit = document.querySelector("#submit");
+
+submit.addEventListener("click", () => {
+  console.log("Sending data...");
+  sendData();
+});
+
+function increaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value++;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value < 1 ? (value = 1) : "";
+  value--;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+const file = document.querySelector("#file");
+file.addEventListener("change", (e) => {
+  // Get the selected file
+  const [file] = e.target.files;
+  // Get the file name and size
+  const { name: fileName, size } = file;
+  // Convert size in bytes to kilo bytes
+  const fileSize = (size / 1000).toFixed(2);
+  // Set the text content
+  const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+  document.querySelector(".file-name").textContent = fileNameAndSize;
+});
+
+function sendData() {
+  let formData = {
+    email: email.value,
+    subjectCode: subjectCode.value,
+    message: message.value,
+  };
+
+  let xhr = new XMLHttpRequest();
+  // xhr.open("POST", "https://asmt-server.herokuapp.com/mail");
+  xhr.open("POST", "http://localhost:5000/mail");
+
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.onload = function () {
+    console.log(xhr.responseText);
+    if (xhr.responseText == "success") {
+      alert("Email Sent Successfully");
+      email.value = "";
+      subjectCode.value = "";
+      message.value = "";
+    } else {
+      alert("Something Went wrong");
+    }
+  };
+  xhr.send(JSON.stringify(formData));
+}
+</script>
+
+</div>
         </div>
-    </div><br><br>
+    </div><br>
     <section style="background: rgba(222,222,222,0.32);">
-        <div class="container"><small style="font-size: 21.8px;">At MyAssignmentWriters Ph.D. consultants in all fields partner with graduate students to assist them with their projects. Regardless of the number of sections or chapters that consultant and student work together on, this collaboration extends throughout the entire process. You can get help with an assignment of any level and complexity. Thesis projects are not easy, and that’s why we assign them to our finest Ph.D. writers. Graduate students feel overwhelmed. That’s their biggest reason for hiring thesis writing services. If you decided to do that, you need an agency that follows instructions, has a flawless reputation, and always delivers impressive results. We’ve been helping students to meet their goals for decades. Those who hire a writer from our team always come back for their next orders.<br><br><br><br>Buying thesis papers has become a common practice. More and more students are purchasing writing services; why shouldn’t you get an extra edge? Don’t let your thesis paper assignment lag behind.&nbsp;<br><br><br>Want somebody to write a Thesis for a fair price?<br><br>Online services are hard to find but it’s harder to find written assistance for complex tasks such as a thesis paper. After all, when you’re ready to get thesis writing help, your choice of an agency will make a big difference. There are a lot of fake services that will charge you a ton and write subpar texts. Please don’t fall into a similar predicament; let us write for you!<br><br><br><br>Our professionally trained essay writers are experts in different subjects. Our writers can handle any task within tight deadlines. They’re highly educated individuals ready to go the extra mile. MyAssignmentWriters has reasonable prices. We understand that most students struggle financially. We provide supreme quality to other websites. Check out our discounts for thesis paper services. First-timers and loyal clients get lower prices! And furthermore:<br><br>We protect your privacy!&nbsp;<br><br>You can contact us at any time to get the information you need. We offer free revisions to all customers who request them. Please, read the terms to get informed about the procedure of requesting free amendments.<br></small></div>
-    </section><br><br>
+        <div class="container"><br>
+            <h4><span style="color: rgb(248,113,69);">APA</span> Referencing Generator<br></h4><small style="font-size: 21.8px;"><br>In case you are seeking after any of the sub-disciplines under conduct or sociologies, you know the difficulties of utilizing the style of APA referring to. Our APA reference generator device is the thing that you need to utilize the 'creator date' style. MyAssignmenthelp.com has thought of an APA referring to generator to assist you with making records and catalogs in an issue of a couple of moments. Since the APA style design accompanies a large group of rules, it is ordinary not to have the option to remember every one of the standards. This is the place where our free APA referring to generator comes in. Also, do you know what the best part is? You can utilize the device to make APA references online for Free in sixth and seventh release design style. Peruse along to study APA style designing and our APA generator.<br></small><br>
+            <h4>Our Free APA Reference Generator Can Solve Every Academic Woe<br></h4><small style="font-size: 19.8px;"><br>The APA referring to generator of MyAssignmenthelp.com has been made remembering flawlessness. Probably the best referring to application makers have plunged their hands while planning our APA reference producer. Furthermore, the instrument depends on priceless bits of knowledge of instructors and academicians in the field of conduct and sociologies. In this way, it has an inbuilt library of calculations that guarantee that the outcomes are according<br>to the APA design rules. <br><br>At the point when you utilize our APA sixth referring to apparatus, here are the advantages that you will appreciate:<br><br>1. 100% Accuracy<br>Our apparatus was implicit finished adherence to each standard recorded in the APA referring to direct. Thus, you can make certain to get an APA style book index that has the commas, capitalizations, and dates in the opportune spot.<br><br>2. Efficient<br>We have utilized super-quick and smooth codes to fabricate the APA referring to generator. Thusly, our apparatus can save your time and energy and make references without any preparation with a couple of moments.<br><br>3. Copyright infringement Free<br>Including citations in an academic paper is the best way to avoid the plagues of unintentional plagiarism. Use our APA referencing generator to cite every source you have used and steer clear of academic piracy.<br><br>4. Our APA referring to generator accompanies a basic interface so you can make in-text references effortlessly. In case you are inexperienced with the rules of APA referring to, our free APA referring to site is the correct spot to be in for prepared outcomes.<br><br>5. What Is APA Referencing? Find out About The Latest Edition<br>APA design style was figured by the American Psychological Association (APA). The style guide was created to make it simpler to appreciate papers on subjects of social and conduct sciences. The APA Publication Manual additionally makes it simple to follow sources and diminish inclination in language. <br><br>The APA referring to framework can be bifurcated into two sections – in-text references and the rundown of references toward the end. Since APA design referring to follows the "creator date" style, the in-text references incorporate the name of the author(s) alongside the extended period of distribution inside (first sections). While making a reference, you likewise need to incorporate the page number, part or segment numbers. <br><br>As of now, most researchers utilize the APA sixth and seventh release while making references. On the off chance that you can't monitor the changing guidelines, utilize our APA referring to generator for faster outcomes.<br><br>Refreshed APA Referencing Guidelines For sixth and seventh Edition <br><br>The APA style rules are changed every now and then, and at present, the APA seventh release is being used. The contrasts between different renditions and the APA sixth and seventh release referring to are: <br><br>While making references for a source with at least three writers, you need to incorporate the name of the principal writer just, and compose et al. <br><br>In the reference rundown of the APA record, you can incorporate every one of the names of up to 20 creators. <br><br>For in excess of 20 writers, you should give an ellipsis (...) after the nineteenth writer and afterward compose the last writer's name eventually for APA designing. <br><br>You presently don't need to remember the spot of distribution for the references according to the most recent version of the APA referring to direct.<br><br>You should give the issue number of a diary inside enclosures following the volume number. <br><br>On the off chance that you think recollecting every one of the minor yet huge changes is turning out to be excessively rushed for you, utilize our APA sixth style referring to generator for precise outcomes. Our APA sixth ed referring to device works quicker than a whirly gig. You can likewise look at our chronicles for APA in-text and referring to models. <br><br>APA Citation Guidelines: An Overview <br><br>Under the APA design, referring to should be possible as creator date references or a catalog. Here is the thing that you need to think about composing APA references a lot.<br><br>Nuts and bolts of APA in-text references <br><br>The one thing that separates APA from the remainder of referring to styles is that you can incorporate brief incidental and account references directly inside the text. You can specify the creator's last name just (according to the APA sixth and seventh release) and distribution year inside enclosure. However, it doesn't end here. You will likewise need to make a comparing passage for the source with the total subtleties in the reference list. <br><br>Here is the thing that an APA in-text reference should resemble – (Brown and Charlie, 2019) <br><br>Fundamentals of APA references <br><br>After you have refered to the source momentarily inside the text, you need to specify the itemized bibliographic information of every one of the sources in the reference list. Every section ought to be made concerning the superscript number of the commentaries and endnotes. <br><br>In case you are tangled about the essential precepts of the APA reference style, you can utilize the APA reference generator of MyAssignmenthelp.com. On the other hand, you can utilize the aide underneath to see how to make a list of sources or commentaries according to the APA-style referring to framework. <br><br>How To Create And Format References In The APA Style? <br><br>Realize why you need an APA design and the basics <br><br>The explanation that makes utilizing the APA referring to style so interesting is the considerable rundown of rules set in the APA rule manual. Regardless of whether you utilize our moment APA reference generator for turning results rapidly, you should know the central principles of the APA referring to arrange. <br><br>Here are the fundamental components that you should remember while making in-text references and organized reference records: <br><br>For An APA Bibliography <br><br>Compose the word Bibliography on the main page and focus it. <br><br>Left adjust the passages.<br><br>Utilize a one-inch indent subsequent to making every passage. <br><br>Utilize a solitary space and a clear line between two passages. <br><br>To refer to numerous works by a similar creator, utilize a 3mm scramble as opposed to rehashing the name after the first run through. <br><br>Utilize 12-pt textual style and a 2.0 pt. separating while at the same time composing the paper. <br><br>Ensure you notice your name and school directly under the heading by adjusting the text in the center. <br><br>Number the pages in the upper right-hand corner. <br><br>For APA In-Text Citations <br><br>Each APA commentary ought to have a superscript number that relates to the source subtleties with a similar number in the catalog. When composing the references, try to specify the page numbers where the per user can discover the data. Start with 1 and proceed as needs be all through the paper as opposed to numbering each source in various pages with 1. <br><br>Indeed, we get it! The limitations of APA style organizing can be a ton to measure. In any case, you should simply get the fundamentals right. To make<br>the references, you can generally depend on our APA referring to generator. Utilize our APA reference generator apparatus to take care of business in a matter of moments by any means. <br><br>How To Use APA Referencing Style In Various Documents? <br><br>The APA design contrasts relying upon the source you refer to. Thus, the arrangement for refering to an online book would differ from that of a printed book. You can utilize our APA sixth ed referring to apparatus to refer to all sources – books, magazines, diaries, and papers. <br><br>To assist you with having a thought, here is all you need to think about refering to various sources in the APA referring to style. <br><br>How To Do APA Referencing For A Book? <br><br>Creator's last name, first name's beginning letter. (year of distribution). The title of the book. Distributer City, State: Publisher. <br><br>When there is one creator: <br><br>Smith, D. (1999). From the Shadows: The Insider's Story of Five Presidents. New York, NY: Bloomsbury <br><br>When there are numerous creators: <br><br>Lawson, T. R., et al. (1993). Business Ethics: An Introduction. New York. NY: MacMillan. <br><br>How To Do APA Referencing For An Edited Book? <br><br>The family name of the manager, first name starting. (Year of distribution). Title of the book. Spot of distribution: Publisher. <br><br>Model: Brent, J. (Ed.). (2014). Easy consideration. Cambridge, MA: MIT<br>Press. <br><br>How To Do APA Referencing On Book Chapters? <br><br>The family name of the creator, first name introductory. (Year of distribution). Title of part. Title of book (pp. Page numbers). Spot of distribution: Publisher. <br><br>Model: Baker, M. (1998) Psychiatric Care of Elders in Hospice Facilities. A-Z of Psychiatric Nursing (24-56). Washington, DC: American Psychiatric Press <br><br>How To Do APA Referencing For E-Books? <br><br>Last name of the creator, First name introductory. (Year of Publication). Title of the Book (E-book form). Recovered from https://xxxx.com <br><br>Model: Holland, W. (2018) All about innovation. Recovered from DOI: xxx <br><br>How To Do APA Style Referencing For Journals? <br><br>The family name of the creator, First name introductory. (Distribution Year) "Title of the article." Name of the Journal, Volume (Issue), pp.- pp. <br><br>Model: Graham, T. (2006) "Educator Education and Special Education" The Journal of the Teaching Division 127(13), 110-129 <br><br>How To Cite E-Journal Articles In APA Style Referencing? <br><br>The family name of the creator, first name introductory. (Distribution Year). Article title. Periodical Title, Volume (Issue), pp-pp. DOI or Retrieved from URL <br><br>Model: James, J. (2010). E-Leadership in advanced education. The British Journal of Educational Technology, 176(19), 889-915. DOI: 10.1111/bjet.12103 <br><br>How To Cite A Website In APA Format? <br><br>The family name of the creator, First name introductory. (Year, the long stretch of distribution) "Title of the Article" Title of the Website. Recovered from: Web URL <br><br>Model: Loomis, D. (2015, January). "Is the Album Scene in the Music Industry Dead?" Retrieved from: http://www.musictoday.com/index.html <br><br>How To Do APA Referencing For Magazines? <br><br>(For PRINT) <br><br>The family name of the creator, First name initials. (Year and month of Publication) "Title of the article." Magazine Title, Volume (Issue) pp.- pp. <br><br>Model: Stansky, A. (2016, May) Are the Storms Getting Extreme? The National Herald, 167(13), 56-70. <br><br>(For ONLINE) <br><br>The family name of the creator, First name initials. (Year and month of Publication) "Title of the article." Magazine Title, Volume (Issue) Retrieved from: <br><br>Model: Stansky, A. (2016, May) Are the Storms Getting Extreme? The National Herald, 167(13). Recovered from: http://www.the nationalherald.com//cxqute_r=123 <br><br>How To Cite A Newspaper Using The APA Citation Style? <br><br>(For PRINT) <br><br>The family name of the creator, first name beginning. (Year, Month Date of Publication). Article title. Paper Title, pp. xx-xx. <br><br>Model: Ross, J. (2007, May 24). The furthest down the line electronic disclosure can be a huge legitimate weapon. The Daily, p. D5. <br><br>(For ONLINE) <br><br>The family name of the creator, first name introductory (Year, Month Date of Publication). Article title. Paper Title, Retrieved from landing page URL <br><br>Model: Hayden, G. (2020, August 31). The Pandemic floods on: Where is the end? The New York Times, Retrieved from http://www.nytimes.com <br><br>How To Do APA Referencing For Legislation And Court Cases? <br><br>Name of initial segment v. Name of the subsequent party, Volume Source Page (Court Date) <br><br>Model: Albert v. Charlie, 354 F. Supp. 1078 (E.D. Wis. 2007) <br><br>How To Do APA Referencing For A Patent? <br><br>Name of the innovator or the creator. (Date of Obtaining the Patent). Named Patent or the Application Number. Spot. Office. <br><br>Model: Waltham, D. (2003). Screwless PC drive. U.S. Patent No. x,xxx,xxx. Washington, DC: U.S. Patent and Trademark Office. <br><br>How To Do APA Referencing For Conference Proceedings? <br><br>The family name of the creator, First name beginning. (Year). Gathering paper title. First introductory of Editor. Manager Surname (Ed.), Proceedings Book Title (pp. page scope of paper). Spot of Publication: Publisher. <br><br>Model: Ansel, E. (2013). Scales estimating provisions of independent venture data frameworks. In W. Brown (Ed.), Proceedings of Research, Relevance and Rigor (pp. 163-171). Perth, Australia: University of New South Wales. <br><br>To refer to the sources according to the APA referring to style precisely, follow these configurations. You can likewise utilize our APA referring to device to do the errand with no issues. <br><br>APA sixth Edition Referencing Examples <br><br>You might have effectively found distinctive APA design models for the referring to of various wellsprings of data. In the event that you need more bits of knowledge about APA referring to, here is an example that you should look at. <br><br>The accompanying example has a cover sheet, test task page and the references list in the APA design. You can utilize this as a layout for your next task assuming you need. <br><br>Full Title of Research Paper Student's Name Course Name (for example Econ<br><br>How Might I Create Accurate Citations With APA Referencing Generator? <br><br>A distant memory are those occasions when referring to sources in the APA style referring to was dreary. At the point when you can get to our APA referring to generator with a couple of snaps, be certain of getting the ideal APA referring to design without fail. <br><br>Here is a manual for utilizing our APA reference convertor. <br><br>Select the books, diary, magazine, and so forth, that you have utilized and save the data. <br><br>Presently, save the data and different subtleties like the URL, ISBN, DOI, and so on <br><br>The instrument will then, at that point put the source in a legitimate design according to the APA design. <br><br>At long last, duplicate the reference and addition into the text's body and glue the designed reference joins into the list of sources. <br><br>Referring to sources in the APA referring to style has never been simpler. Utilize our APA 6 reference generator immediately to dispose of the relative multitude of errors. With our APA sixth ed referring to generator at your guide, you make certain to score full checks in each scholarly paper. <br><br>Try not to Have The Time To Cite Your Assignment? Pass on It To The Experts Of Assignmenthelplite.Com <br><br>Assignmenthelplite.com is home to the absolute best scholarly specialists in the entire world. In case you're not ready to complete your task paper or on the other hand in case you are battling to direct the reference for the paper, Assignmenthelplite.com APA Generator can do it for you. <br><br>The specialists of Assignmenthelplite.com know about all the significant reference styles including APA, MLA, Oxford, Harvard, Chicago, Vancouver and some more. In addition, these specialists can chip away at each part of the errand, other than reference and referring to. You will partake in these astonishing provisions at whatever point you put in a request with Assignmenthelplite.com: <br><br>Preeminent quality task with zero mistakes to assist you with accomplishing higher grades. <br><br>100% unique piece of work that can make you the teacher's top choice. <br><br>Incredible limits with each request at MyAssigmmenthelp.com. <br><br>Brief conveyance of each request without compromising with the quality. <br><br>Legitimate reactions from client care group; as quick as Nadal's groundstrokes. <br><br>100% privacy of client information, with complete protection from malware. <br><br>Free modify for unfulfilled orders so you can appreciate an incentive for cash. <br><br>Gigantic assortment of free examples and sites to help your comprehension of scholarly practices. <br><br>The best part to recruit a referring to specialists is that they don't cost additional bucks. The administrations are in any case the most reasonable ones on the lookout. Then, at that point what is halting you now? Submit your request immediately and appreciate exhaustive help for your task.<br><br></small>
+        </div>
+    </section>
     <div data-aos="zoom-in" class="footer-dark degra-azul">
         <footer>
             <div class="container">
