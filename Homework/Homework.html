@@ -97,14 +97,334 @@
     </section>
     <div class="container">
         <div class="row">
+            <div class="col-md-6"><br><br><br><br>
+                <h2 style="color: rgb(248,113,69);">Primary Homework Help Online<br></h2><br><small style="font-size: 19.8px;"><br>Solve That In No Time With Our Live Homework Help<br></small><br><br>
+                <div class="row" style="width: 466px;text-align: center;">
+                    <div class="col-md-4"><i class="fa fa-users" style="font-size: 45px;color: rgb(248,113,69);"></i><small><br>5,140&nbsp; PhD Experts<br></small></div>
+                    <div class="col-md-4"><i class="fa fa-phone-square" style="font-size: 45px;color: rgb(248,113,69);"></i><small><br>24X7 Support<br></small></div>
+                    <div class="col-md-4"><i class="fa fa-book" style="font-size: 45px;color: rgb(248,113,69);"></i><small><br>100+ Subjects<br></small></div>
+                </div>
+            </div>
+            <div class="col-md-6"><style>
+.main-form {
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="datetime-local"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+.value-button {
+  display: inline-block;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  border: 0.5px solid lightgrey;
+}
+.value-button:hover {
+  cursor: pointer;
+}
+
+.main-form #decrease {
+  margin-right: -4px;
+  background-color: #eee;
+  color: black;
+  height: 40px;
+  width: 40px;
+
+  border-radius: 8px 0 0 8px;
+}
+
+.main-form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+  color: black;
+  width: 40px;
+  height: 40px;
+
+  background-color: #eee;
+}
+
+.main-form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  background-color: lightcyan;
+  border: none;
+  margin: 20px 0px;
+  width: 40px;
+
+  height: 40px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* File Input */
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+.file-input {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.file-input label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b6b6b6;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+  margin: 0px;
+}
+
+.file-name {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#submit {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #1895de;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0px;
+}
+@media (max-width: 768px) {
+  .file-input label {
+    font-size: 0.8rem;
+  }
+  .file-name {
+    font-size: 0.5rem;
+    margin-bottom: 0;
+  }
+  .main-form {
+    padding: 1.5rem;
+  }
+  .main-form h3 {
+    font-size: 1rem;
+  }
+  .main-form p:first-child {
+    font-size: 0.8rem;
+  }
+}
+</style>
+<form method="POST" class="main-form">
+            <h3 style="margin-bottom: 0">AssignmentHelplite</h3>
+            <small style="margin-top: 0">
+              Fill in the details and get a quick assistance on your assignment.
+            </small>
+            <label for="emailid">Enter your email id</label>
+            <input
+              type="email"
+              id="emailid"
+              name="email"
+              placeholder="Enter Email"
+            />
+
+            <label for="subjectcode">Your Subject / Course Code</label>
+            <input
+              type="text"
+              id="subjectcode"
+              name="subjectcode"
+              placeholder="Eg. UNCC100 Self & Community"
+            />
+            <label for="deadline">Deadline</label>
+            <input type="datetime-local" id="deadline" name="deadline" />
+            <label for>No. of Pages/ Words</label>
+            <br />
+            <div
+              class="value-button"
+              id="decrease"
+              style="margin-left: 0px"
+              onclick="decreaseValue()"
+              value="Decrease Value"
+            >
+              -
+            </div>
+            <input type="number" id="number" value="1" />
+
+            <div
+              class="value-button"
+              id="increase"
+              onclick="increaseValue()"
+              value="Increase Value"
+            >
+              +
+            </div>
+            <small id="words" style="margin-top: 0px">250 words</small>
+
+            <br />
+            <label for="message">Enter Assignment Description</label>
+            <textarea id="message" rows="3"></textarea>
+
+            <div class="actions">
+              <div class="file-input">
+                <div>
+                  <input type="file" id="file" class="file" />
+                  <label for="file"> Attach file </label>
+                </div>
+                <p class="file-name"></p>
+              </div>
+
+              <input type="button" value="Free Assistance" id="submit" />
+            </div>
+          </form>
+<script>
+    const words = document.querySelector("#words");
+const email = document.querySelector("#emailid");
+const subjectCode = document.querySelector("#subjectcode");
+const message = document.querySelector("#message");
+const submit = document.querySelector("#submit");
+
+submit.addEventListener("click", () => {
+  console.log("Sending data...");
+  sendData();
+});
+
+function increaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value++;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value < 1 ? (value = 1) : "";
+  value--;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+const file = document.querySelector("#file");
+file.addEventListener("change", (e) => {
+  // Get the selected file
+  const [file] = e.target.files;
+  // Get the file name and size
+  const { name: fileName, size } = file;
+  // Convert size in bytes to kilo bytes
+  const fileSize = (size / 1000).toFixed(2);
+  // Set the text content
+  const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+  document.querySelector(".file-name").textContent = fileNameAndSize;
+});
+
+function sendData() {
+  let formData = {
+    email: email.value,
+    subjectCode: subjectCode.value,
+    message: message.value,
+  };
+
+  let xhr = new XMLHttpRequest();
+  // xhr.open("POST", "https://asmt-server.herokuapp.com/mail");
+  xhr.open("POST", "http://localhost:5000/mail");
+
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.onload = function () {
+    console.log(xhr.responseText);
+    if (xhr.responseText == "success") {
+      alert("Email Sent Successfully");
+      email.value = "";
+      subjectCode.value = "";
+      message.value = "";
+    } else {
+      alert("Something Went wrong");
+    }
+  };
+  xhr.send(JSON.stringify(formData));
+}
+</script>
+
+</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
             <div class="col">
                 <h2 style="text-align: center;font-size: 49px;">Home&nbsp;<span style="color: rgb(248,113,69);">Work</span></h2>
             </div>
         </div>
-    </div><br><br>
-    <section style="background: rgba(222,222,222,0.32);">
-        <div class="container"><small style="font-size: 21.8px;">At MyAssignmentWriters Ph.D. consultants in all fields partner with graduate students to assist them with their projects. Regardless of the number of sections or chapters that consultant and student work together on, this collaboration extends throughout the entire process. You can get help with an assignment of any level and complexity. Thesis projects are not easy, and that’s why we assign them to our finest Ph.D. writers. Graduate students feel overwhelmed. That’s their biggest reason for hiring thesis writing services. If you decided to do that, you need an agency that follows instructions, has a flawless reputation, and always delivers impressive results. We’ve been helping students to meet their goals for decades. Those who hire a writer from our team always come back for their next orders.<br><br><br><br>Buying thesis papers has become a common practice. More and more students are purchasing writing services; why shouldn’t you get an extra edge? Don’t let your thesis paper assignment lag behind.&nbsp;<br><br><br>Want somebody to write a Thesis for a fair price?<br><br>Online services are hard to find but it’s harder to find written assistance for complex tasks such as a thesis paper. After all, when you’re ready to get thesis writing help, your choice of an agency will make a big difference. There are a lot of fake services that will charge you a ton and write subpar texts. Please don’t fall into a similar predicament; let us write for you!<br><br><br><br>Our professionally trained essay writers are experts in different subjects. Our writers can handle any task within tight deadlines. They’re highly educated individuals ready to go the extra mile. MyAssignmentWriters has reasonable prices. We understand that most students struggle financially. We provide supreme quality to other websites. Check out our discounts for thesis paper services. First-timers and loyal clients get lower prices! And furthermore:<br><br>We protect your privacy!&nbsp;<br><br>You can contact us at any time to get the information you need. We offer free revisions to all customers who request them. Please, read the terms to get informed about the procedure of requesting free amendments.<br></small></div>
-    </section><br><br>
+    </div><br>
+    <section style="background: rgba(222,222,222,0.32);"><br>
+        <div class="container">
+            <div class="row" style="text-align: center;">
+                <div class="col-md-4">
+                    <h4 style="color: rgb(248,113,69);">K11-K12<br></h4><small style="font-size: 19.8px;"><br>As a K11 or K12 student, you must understand the fact that your homework papers require more in-depth analysis of the topic and better explanation of the solution. Our team of live tutors is well aware of the fact, and they offer the needful homework assistance every time you request.<br></small>
+                </div>
+                <div class="col-md-4">
+                    <h4 style="color: rgb(248,113,69);">K6-K8<br></h4><small style="font-size: 19.8px;"><br>Most of the experts at AssignmentHelplite.com are serving in this professional for several years, which gives them an edge in solving all sorts of Homework problems in lesser time. If you are currently at the K6-K8 level, you can definitely find instant homework Help assistance from our top homework helpers.<br><br></small>
+                </div>
+                <div class="col-md-4">
+                    <h4 style="color: rgb(248,113,69);">K9-K10<br></h4><small style="font-size: 19.8px;"><br>The experts who offer live tutoring at AssignmentHelplite.com are mostly PhD graduates who have in-depth knowledge of the subject. So if you are looking for help with your homework, you can expect supreme quality support from them that is suitable for K9 or K10 students.<br><br></small>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="font-size: 19.8px;"><small style="font-size: 19.8px;"><br>Schoolwork once more! Concentrating in school isn't simple since you have huge loads of tasks without a moment's delay. Do you endeavor to have the chance to pay for college educational cost? Possibly you can't deal with all assignments all the while? You don't need to! We're here to take care of you! Why not Get Homework Help From Experts to take care of all issues right away?<br><br>Schoolwork help is a solid composing administration you can trust the culmination of every one of your papers. We can deal with undertakings of any intricacy in light of the fact that our authors are exceptionally qualified experts. They've finished an incredible number of tasks to offer their experience and aptitude for you at this moment! Peruse input from our recurrent clients on our site to ensure you're in acceptable hands. We've been in this business for a long time and we gloat a huge base of clients and skilled scholars who are prepared to assist you with any planning. Regardless of whether you have 12 hours before accommodation, we can in any case finish your task to assist you with getting passing marks. Peruse more about our administrations beneath and don't stop for a second to reach us any time utilizing our every minute of every day client assistance talk. Submitting a request is simple and you will just compensation for a total great paper followed through on schedule.<br><br></small>
+            <h4>School homework help from reliable writing service<br></h4><small style="font-size: 19.8px;"><br>It's anything but an issue to discover schoolwork help on the web and pay cash for your paper. The issue is to get an excellent paper with no syntax blunders and errors on schedule. This is the thing that we ensure. We offer more advantages to our clients, in particular:<br><br>1. Limitless help – our responsive help group works day and night for your benefit. Simply utilize our every minute of every day online visit to get in touch with us and settle any worries in regards to your request. <br><br>2. Proficient scholars – we just utilize authors having Master's and Ph.D. degrees to guarantee the faultless nature of papers. <br><br>3.&nbsp;Privacy strategy – you're secured at each progression of putting in a request since we utilize the most recent PC innovations to guarantee your secrecy. <br><br>4.&nbsp;Convenient conveyance – on-time conveyance involves high need in this business and we comprehend it quite well. We can deal with your undertaking regardless of whether 6-8 hours are left until the cutoff time. <br><br>5. Wide selection of essayists – Our author's profiles are openly accessible on our site and demonstrate their experience, polished skill, and individual characteristics. You can pick the one you trust to ensure you get a great paper on schedule. <br><br>6.&nbsp;Literary theft free way of thinking – we ensure conveyance of a 100% novel paper in the event that you request from our composing administration. <br><br>7.&nbsp;We run all papers through forward-thinking literary theft checkers to guarantee your paper is liberated from copyright infringement. <br><br>We give an unconditional promise to guarantee you're at the best spot to find support with schoolwork! Try not to spare a moment to contact our help group for additional subtleties in case you don't know how to put in a request.<br><br></small>
+            <h4>Request that professional writers help with homework<br></h4><small style="font-size: 19.8px;"><br>A group of expert scholars is the center upper hand of numerous schoolwork help sites, yet few really handle assignments of high intricacy. A few organizations offering schoolwork help online can just finish tasks in specific disciplines. Our task composing administration can assist you with finishing a job of any intricacy including both secondary school and school papers. <br><br>Our expert scholars will finish your task rapidly with no language blunders. They're capable in the accompanying subjects:<br><br>1. Math <br><br>2. English Literature <br><br>3. Physical science <br><br>4. Business <br><br>5. Financial matters <br><br>6. Showcasing <br><br>7. The board <br><br>8. Money <br><br>9. Humanism <br><br>10. Law <br><br>11. Medication<br><br>Here we've recorded a few disciplines we handle. Ask our help group on the off chance that you delay whether we can finish your task. We're not terrified of complex assignments: our essayists are prepared to confront any difficulties, including the finish of Excel accounting pages, computations, formulae or in any event, breezing through online tests.<br><br></small>
+            <h4>Our essayists can finish different papers:<br></h4><small style="font-size: 19.8px;"><br>Expositions <br><br>Reports <br><br>Contextual<br>analyses <br><br>Examination<br>recommendations <br><br>Expositions<br><br>These are the most widely recognized papers requested from our authors. It doesn't mean we can't finish different papers. We're available to new arrangements and approaches as we're focused on constant<br>greatness. <br><br>Furthermore, every one of our authors have moved on from esteemed schools and colleges and can exhibit significant skill in your necessary subjects. Our fundamental prerequisite for our essayists is to have no less than a Master's certificate in the field they will finish tasks.<br><br></small>
+            <h4>Request your homework help at Assignmenthelplite.com and boost your grades<br></h4><small style="font-size: 19.8px;"><br>1. In case you're prepared to arrange a paper, you simply need to do the accompanying<br><br>2. Spot a request in your program my schoolwork help <br><br>3. Discover our schoolwork composing help <br><br>4. Ascertain the cost for your request utilizing our mini-computer <br><br>5. Submit a request on our site <br><br>6.&nbsp;Put aside an installment utilizing our basic installment framework<br><br>In the event that you have any worries, you're allowed to contact our every minute of every day support group. Our unconditional promise guarantees you will get 100% of your prepayment in case you're not happy with the nature of your task. Our approaches are clear and straightforward for our clients and we're prepared to do all to meet any necessities. These are the reasons our returning clients pick us over and over.<br><br>In the event that you need assistance with your schoolwork, you can purchase task online from our organization and make certain to tackle somewhere around one issue in your life! We brag 100% positive tributes from our clients who've requested papers from our composing administration before. Look at our tributes and request a paper from a dependable composing organization now!<br><br>It's not hard to track down school schoolwork help on the web, yet tracking down a dependable custom composing administration is a major issue. Our online schoolwork help offers various advantages to our clients, including an unconditional promise in case you're not happy with administration quality. Get your work done with our assistance to set aside time and cash for more charming exercises! Make it happen with us quick to take care of all your schoolwork related issues without a moment's delay!<br><br></small>
+        </div>
+    </section>
     <div data-aos="zoom-in" class="footer-dark degra-azul">
         <footer>
             <div class="container">
