@@ -262,13 +262,65 @@
                 </div><button class="btn btn-primary" data-bss-hover-animate="swing" type="button" style="background: rgb(248,113,69);">Place order</button>
             </div>
         </nav>
-    </section><br>
+    </section>
     <div class="container">
         <div class="row">
             <div class="col-md-6"><br>
                 <h4 style="text-align: center;font-size: 33px;width: 316.6px;">Assignment&nbsp;<span style="color: rgb(248,113,69);">Writing</span></h4><br><br><br><img src="assets/img/Features-of-the-Service.png" style="width: 256px;">
             </div>
-            <div class="col-md-6"><style>
+            <div class="col-md-6"><form method="POST" class="main-form">
+        <div>
+            <h3 style="margin-bottom: 0">Assignmenthelplite</h3>
+            <small style="margin-top: 0">
+                Fill in the details and get a quick assistance on your assignment.
+            </small>
+        </div>
+
+        <div class="flex-form">
+            <div>
+                <label for="emailid">Enter your email id</label>
+                <input type="email" id="emailid" name="email" placeholder="Enter Email" />
+
+                <label  for="subjectcode">Your Subject / Course Code</label>
+                <input type="text" id="subjectcode" name="subjectcode" placeholder="Eg. UNCC100 Self & Community" />
+                <label for="deadline">Deadline</label>
+                <input type="datetime-local" id="deadline" name="deadline" />
+            </div>
+            <div>
+                <label for>No. of Pages/ Words</label>
+                <br />
+                <div class="value-button" id="decrease" style="margin-left: 0px" onclick="decreaseValue()"
+                    value="Decrease Value">
+                    -
+                </div>
+                <input type="number" id="number" value="1" />
+
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">
+                    +
+                </div>
+                <small id="words" style="margin-top: 0px">250 words</small>
+
+                <br />
+                <label for="message">Enter Assignment Description</label>
+                <textarea id="message" rows="3"></textarea>
+            </div>
+        </div>
+
+        <div class="actions">
+            <div class="file-input">
+                <div>
+                    <input type="file" id="file" class="file" />
+                    <label for="file"> Attach file </label>
+                </div>
+                <p class="file-name"></p>
+            </div>
+
+            <input type="button" value="Free Assistance" id="submit" />
+        </div>
+    </form>
+
+<style>
+
 .main-form {
   padding: 2rem;
   border-radius: 5px;
@@ -282,8 +334,9 @@ input[type="datetime-local"],
 select,
 textarea {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  
+  padding: 10px 20px;
+  margin: 7px 0;
   display: inline-block;
   border-radius: 4px;
   box-sizing: border-box;
@@ -408,6 +461,17 @@ input[type="number"]::-webkit-outer-spin-button {
   cursor: pointer;
   margin: 0px;
 }
+
+.flex-form{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-form div{
+  width: 48%;
+  height: 300px;
+}
+
 @media (max-width: 768px) {
   .file-input label {
     font-size: 0.8rem;
@@ -425,69 +489,19 @@ input[type="number"]::-webkit-outer-spin-button {
   .main-form p:first-child {
     font-size: 0.8rem;
   }
+
+  .flex-form{
+    flex-direction: column;
+      
+  }
+
+  .flex-form div{
+    width: 98%;
+  }  
 }
+
 </style>
-<form method="POST" class="main-form">
-            <h3 style="margin-bottom: 0">AssignmentHelplite</h3>
-            <small style="margin-top: 0">
-              Fill in the details and get a quick assistance on your assignment.
-            </small>
-            <label for="emailid">Enter your email id</label>
-            <input
-              type="email"
-              id="emailid"
-              name="email"
-              placeholder="Enter Email"
-            />
 
-            <label for="subjectcode">Your Subject / Course Code</label>
-            <input
-              type="text"
-              id="subjectcode"
-              name="subjectcode"
-              placeholder="Eg. UNCC100 Self & Community"
-            />
-            <label for="deadline">Deadline</label>
-            <input type="datetime-local" id="deadline" name="deadline" />
-            <label for>No. of Pages/ Words</label>
-            <br />
-            <div
-              class="value-button"
-              id="decrease"
-              style="margin-left: 0px"
-              onclick="decreaseValue()"
-              value="Decrease Value"
-            >
-              -
-            </div>
-            <input type="number" id="number" value="1" />
-
-            <div
-              class="value-button"
-              id="increase"
-              onclick="increaseValue()"
-              value="Increase Value"
-            >
-              +
-            </div>
-            <small id="words" style="margin-top: 0px">250 words</small>
-
-            <br />
-            <label for="message">Enter Assignment Description</label>
-            <textarea id="message" rows="3"></textarea>
-
-            <div class="actions">
-              <div class="file-input">
-                <div>
-                  <input type="file" id="file" class="file" />
-                  <label for="file"> Attach file </label>
-                </div>
-                <small class="file-name"></small>
-              </div>
-
-              <input type="button" value="Free Assistance" id="submit" />
-            </div>
-          </form>
 <script>
     const words = document.querySelector("#words");
 const email = document.querySelector("#emailid");
@@ -555,9 +569,7 @@ function sendData() {
   };
   xhr.send(JSON.stringify(formData));
 }
-</script>
-
-</div>
+</script></div>
         </div>
     </div><br>
     <h2 style="text-align: center;font-size: 42px;">Assignment&nbsp;<span style="color: rgb(248,113,69);">Writing</span></h2><br>
