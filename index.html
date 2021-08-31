@@ -79,8 +79,7 @@
 
 <body>
     <div></div>
-    <section class="features-clean">
-        <nav class="navbar navbar-dark navbar-expand-md bg-dark navigation-clean">
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark navigation-clean">
             <div class="container"><a href="https://guptajimahak.github.io/asssignmenthelperlite/index.html">
                     <h3 style="color: rgb(249,249,249);">Assignment<span style="color: rgb(248,113,69);">helplite</span></h3>
                 </a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -264,28 +263,314 @@
                 </div><button class="btn btn-primary" data-bss-hover-animate="swing" type="button" style="background: rgb(248,113,69);">Place order</button>
             </div>
         </nav>
-    </section>
     <section style="background-image: url('assets/img/home.jpg');/*background-size: cover;*/background-repeat: no-repeat;height: 100%;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6"><br><br><br><br><br><br><br><br><br><br><br><br>
                     <h1 style="color: rgb(255,255,255);font-family: Roboto, sans-serif;font-size: 59px;">Big dreams, come true here&nbsp; &nbsp; &nbsp; &nbsp;</h1><small style="font-size: 38.8px;color: rgb(255,255,255);">Your Education, Your way!</small><br>
                 </div>
-                <div class="col-md-6">
-                    <section class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center register-photo" style="background: #ffffff00;">
-                        <div class="form-container bg-white" style="margin-top: 45px;margin-bottom: 45px;">
-                            <form method="post" style="background: #ffffff;">
-                                <h4 class="text-center"><strong>Register</strong></h4>
-                                <div class="form-group"><label style="margin-bottom: 10px;"><strong>Name</strong></label><input class="form-control" type="text" style="margin-bottom: 20px;" placeholder="Enter name here"></div>
-                                <div class="form-group"><label style="margin-bottom: 10px;margin-top: 10px;"><strong>Email</strong></label><input class="form-control" type="text" style="margin-bottom: 20px;" placeholder="Enter your mail"></div>
-                                <div class="form-group"><label style="margin-bottom: 10px;margin-top: 10px;"><strong>Password</strong></label><input class="form-control" type="text" style="margin-bottom: 20px;" placeholder="password"></div>
-                                <div class="form-row">
-                                    <div class="col-md-6" style="margin-top: 20px;"><button class="btn btn-primary btn-block d-lg-flex justify-content-lg-center" type="submit" style="background: rgb(248,114,70);">Free Assistance</button></div>
-                                </div>
-                            </form>
-                        </div>
-                    </section>
+                <div class="col-md-6"><form method="POST" class="main-form">
+        <div>
+            <h3 style="margin-bottom: 0">Assignmenthelplite</h3>
+            <p style="margin-top: 0">
+                Fill in the details and get a quick assistance on your assignment.
+            </p>
+        </div>
+
+        <div class="flex-form">
+            <div>
+                <label style="color:white" for="emailid">Enter your email id</label>
+                <input type="email" id="emailid" name="email" placeholder="Enter Email" />
+
+                <label style="color:white" for="subjectcode">Your Subject / Course Code</label>
+                <input type="text" id="subjectcode" name="subjectcode" placeholder="Eg. UNCC100 Self & Community" />
+                <label style="color:white" for="deadline">Deadline</label>
+                <input type="datetime-local" id="deadline" name="deadline" />
+            </div>
+            <div>
+                <label style="color:white" for>No. of Pages/ Words</label>
+                <br />
+                <div class="value-button" id="decrease" style="margin-left: 0px" onclick="decreaseValue()"
+                    value="Decrease Value">
+                    -
                 </div>
+                <input type="number" id="number" value="1" />
+
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">
+                    +
+                </div>
+                <p id="words" style="margin-top: 0px">250 words</p>
+
+                <br />
+                <label style="color:white" for="message">Enter Assignment Description</label>
+                <textarea id="message" rows="3"></textarea>
+            </div>
+        </div>
+
+        <div class="actions">
+            <div class="file-input">
+                <div>
+                    <input type="file" id="file" class="file" />
+                    <label style="color:white" for="file"> Attach file </label>
+                </div>
+                <p class="file-name"></p>
+            </div>
+
+            <input type="button" value="Free Assistance" id="submit" />
+        </div>
+    </form>
+
+<style>
+
+.main-form {
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="datetime-local"],
+select,
+textarea {
+  width: 100%;
+  height: 15%;
+  padding: 10px 20px;
+  margin: 7px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+.value-button {
+  display: inline-block;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  border: 0.5px solid lightgrey;
+}
+.value-button:hover {
+  cursor: pointer;
+}
+
+.main-form #decrease {
+  margin-right: -4px;
+  background-color: #eee;
+  color: black;
+  height: 40px;
+  width: 40px;
+
+  border-radius: 8px 0 0 8px;
+}
+
+.main-form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+  color: black;
+  width: 40px;
+  height: 40px;
+
+  background-color: #eee;
+}
+
+.main-form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  background-color: lightcyan;
+  border: none;
+  margin: 20px 0px;
+  width: 40px;
+
+  height: 40px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* File Input */
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+.file-input {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.file-input label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b6b6b6;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+  margin: 0px;
+}
+
+.file-name {
+  font-size: 0.85rem;
+  color: #ffff;
+  margin-top: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#submit {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #1895de;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0px;
+}
+
+.flex-form{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-form div{
+  width: 48%;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .file-input label {
+    font-size: 0.8rem;
+  }
+  .file-name {
+    font-size: 0.5rem;
+    margin-bottom: 0;
+  }
+  .main-form {
+    padding: 1.5rem;
+  }
+  .main-form h3 {
+    font-size: 1rem;
+  }
+  .main-form p:first-child {
+    font-size: 0.8rem;
+  }
+
+  .flex-form{
+    flex-direction: column;
+      
+  }
+
+  .flex-form div{
+    width: 98%;
+  }  
+}
+
+</style>
+
+<script>
+    const words = document.querySelector("#words");
+const email = document.querySelector("#emailid");
+const subjectCode = document.querySelector("#subjectcode");
+const message = document.querySelector("#message");
+const submit = document.querySelector("#submit");
+
+submit.addEventListener("click", () => {
+  console.log("Sending data...");
+  sendData();
+});
+
+function increaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value++;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 1 : value;
+  value < 1 ? (value = 1) : "";
+  value--;
+  document.getElementById("number").value = value;
+  words.textContent = `${value * 250} words`;
+}
+
+const file = document.querySelector("#file");
+file.addEventListener("change", (e) => {
+  // Get the selected file
+  const [file] = e.target.files;
+  // Get the file name and size
+  const { name: fileName, size } = file;
+  // Convert size in bytes to kilo bytes
+  const fileSize = (size / 1000).toFixed(2);
+  // Set the text content
+  const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+  document.querySelector(".file-name").textContent = fileNameAndSize;
+});
+
+function sendData() {
+  let formData = {
+    email: email.value,
+    subjectCode: subjectCode.value,
+    message: message.value,
+  };
+
+  let xhr = new XMLHttpRequest();
+  // xhr.open("POST", "https://asmt-server.herokuapp.com/mail");
+  xhr.open("POST", "http://localhost:5000/mail");
+
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.onload = function () {
+    console.log(xhr.responseText);
+    if (xhr.responseText == "success") {
+      alert("Email Sent Successfully");
+      email.value = "";
+      subjectCode.value = "";
+      message.value = "";
+    } else {
+      alert("Something Went wrong");
+    }
+  };
+  xhr.send(JSON.stringify(formData));
+}
+</script></div>
             </div>
         </div>
     </section>
